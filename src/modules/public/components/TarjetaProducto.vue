@@ -12,7 +12,9 @@
               </div>
               <div class="card-body text-center">
                 <h5 class="font-weight-normal">
-                  <a href="javascript:;">{{ producto.titulo }}</a>
+                  <RouterLink :to='`/producto/${producto.id}`'>
+                    {{ producto.titulo }}
+                  </RouterLink>
                 </h5>
                 <h3>Bs. {{ producto.precio }}</h3>
                 <p class="mb-0">

@@ -53,11 +53,17 @@ export const useCarritoStore = defineStore('carrito', () => {
         }, 0)
     }
 
+    function cantidadProducto (id){
+        const producto = carrito.value.find(item => item.id === id)
+        return producto ? producto.cantidad : 0;
+   }
+
     return { 
         carrito,
         agregarProducto,
         eliminarProducto,
         vaciarCarrito,
-        calcularTotalCarrito 
+        calcularTotalCarrito,
+        cantidadProducto 
     }
 })
